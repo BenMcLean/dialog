@@ -58,6 +58,8 @@ dkms.conf
 
 # End of https://www.gitignore.io/api/c
 
+!package/dialog.map
+
 # Results of ./configure and make
 config.log
 config.status
