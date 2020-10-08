@@ -57,3 +57,13 @@ Mkfile.old
 dkms.conf
 
 # End of https://www.gitignore.io/api/c
+
+# Results of ./configure and make
+config.log
+config.status
+dialog
+dialog-config
+dlg_config.h
+headers-sh
+makefile
+man2html.tmp
