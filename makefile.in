@@ -168,6 +168,7 @@ OBJECTS = $(EXTRAOBJS) \
 	mouse$o \
 	mousewget$o \
 	msgbox$o \
+	oskbox$o \
 	textbox$o \
 	ttysize$o \
 	ui_getc$o \

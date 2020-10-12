@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/dialog",
-            "args": ["--title", "'Message'", "--msgbox", "'Hello, world!'", "5", "20"],
+            "args": ["--oskbox", "\"Enter your name:\"", "8", "40"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

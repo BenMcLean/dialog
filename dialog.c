@@ -101,6 +101,7 @@ typedef enum {
     ,o_nocancel
     ,o_nook
     ,o_ok_label
+	,o_oskbox
     ,o_output_fd
     ,o_output_separator
     ,o_passwordbox
@@ -256,6 +257,7 @@ static const Options options[] = {
     { "infobox",	o_infobox,		2, "<text> <height> <width>" },
     { "input-fd",	o_input_fd,		1, "<fd>" },
     { "inputbox",	o_inputbox,		2, "<text> <height> <width> [<init>]" },
+	{ "oskbox",		o_oskbox,		2, "<text> <height> <width> [<init>]" },
     { "inputmenu",	o_inputmenu,		2, "<text> <height> <width> <menu height> <tag1> <item1>..." },
     { "insecure",	o_insecure,		1, "" },
     { "item-help",	o_item_help,		1, "" },
@@ -891,6 +893,17 @@ call_inputbox(CALLARGS)
 }
 
 static int
+call_oskbox(CALLARGS)
+{
+    *offset_add = arg_rest(av);
+    return dialog_oskbox(t,
+			   av[1],
+			   numeric_arg(av, 2),
+			   numeric_arg(av, 3),
+			   optional_str(av, 4, 0), 0);
+}
+
+static int
 call_passwordbox(CALLARGS)
 {
     *offset_add = arg_rest(av);
@@ -1219,6 +1232,7 @@ static const Mode modes[] =
     {o_checklist,       7, 0, call_checklist},
     {o_radiolist,       7, 0, call_radiolist},
     {o_inputbox,        4, 5, call_inputbox},
+	{o_oskbox,        	4, 5, call_oskbox},
     {o_passwordbox,     4, 5, call_passwordbox},
 #ifdef HAVE_DLG_GAUGE
     {o_gauge,           4, 5, call_gauge},
